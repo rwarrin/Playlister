@@ -71,7 +71,7 @@ void WritePlaylist(std::string filePath, std::string fileName, std::vector<std::
 
     // build a filename to use for the playlist
     string playlist(filePath);
-    playlist += "\\";
+    playlist += "\\00-";
     playlist += fileName;
     playlist += ".m3u";
 
