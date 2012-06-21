@@ -19,7 +19,7 @@
 // This function is used to call all other functions used to build a single
 // playlist file. Returns 0 if a playlist is successfully created.
 // filePath: C-String containing the path to the directory to be used.
-int BuildPlaylist(char *filePath);
+void BuildPlaylist(char *filePath);
 
 // Parses a filepath to extract the name of the directory to be enumerated.
 // Returns a string containing the directory name.

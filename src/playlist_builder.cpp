@@ -13,18 +13,22 @@
 #include <windows.h>
 #include <fstream>
 
-int BuildPlaylist(char *filePath) {
+// BuildPlaylist takes a C-String containing a directory path. Then the 
+// function converts the C-String to a std::string, next it parses out then
+// name of the directory from the path. Next it iterates over all files in the
+// path and stores all .mp3 file names in a vector. Finally a playlist is
+// created at the directory path and populated with the contents of the vector.
+void BuildPlaylist(char *filePath) {
     using namespace std;
 
     string path(filePath);
     string directoryName = GetDirectoryName(path);
     vector<string> fileList = BuildFileList(path);
-
     WritePlaylist(path, directoryName, fileList);
-
-    return 0;
 }
 
+// Takes a string containing a directory path and extracts the directory name
+// from it. Returns a string containing the name of the directory.
 std::string GetDirectoryName(std::string filePath) {
     using namespace std;
 
@@ -39,6 +43,10 @@ std::string GetDirectoryName(std::string filePath) {
     return directoryName;
 }
 
+// Iterates through all files in the directory contained in filePath, for all
+// .mp3 files found they are stored in a vector. Once the function is done
+// scanning through the directory the vector containing files names of all .mp3
+// files is returned.
 std::vector<std::string> BuildFileList(std::string filePath) {
     using namespace std;
 
@@ -66,6 +74,9 @@ std::vector<std::string> BuildFileList(std::string filePath) {
     return fileList;
 }
 
+// Creates a new file at filePath using the directory name for the name of the
+// playlist to be created. The contents of the fileList vector are written to
+// the file.
 void WritePlaylist(std::string filePath, std::string fileName, std::vector<std::string> &fileList) {
     using namespace std;
 
