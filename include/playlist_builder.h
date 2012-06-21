@@ -31,4 +31,12 @@ std::string GetDirectoryName(std::string filePath);
 // filePath: std::string containing the path to the directory to iterate.
 std::vector<std::string> BuildFileList(std::string filePath);
 
+// Creates a new playlist file in the filePath directory using the fileName name
+// and populating it with the contents of the fileList vector.
+// filePath: std::string containing path to create file in.
+// fileName: std::string containing the name of the playlist to be created
+// fileList: std::vector<std::string> reference to a container with all 
+// .mp3 file names to add to the playlist.
+void WritePlaylist(std::string filePath, std::string fileName, std::vector<std::string> &fileList);
+
 #endif  // PLAYLIST_BUILDER_H

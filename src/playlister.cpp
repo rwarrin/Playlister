@@ -11,14 +11,13 @@
 
 #include <iostream>
 #include <string>
-#include <windows.h>
 
 #include "../include/playlist_builder.h"
 
 int main(int argc, char *argv[]) {
     using namespace std;
 
-    char *filepath = "C:\\Projects\\Playlister\\tests";
+    char *filepath = "K:\\Music\\Korn - Korn";
     BuildPlaylist(filepath);
 
     return 0;
