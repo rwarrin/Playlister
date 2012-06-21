@@ -1,0 +1,7 @@
+*.h~
+*.cpp~
+README~
+*.exe
+*.stackdump
+.gitignore.swp
+*.swp
