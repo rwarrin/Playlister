@@ -1,6 +1,6 @@
 *.h~
 *.cpp~
-README~
+*.md~
 *.exe
 *.stackdump
 .gitignore.swp
