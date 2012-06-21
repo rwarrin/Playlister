@@ -18,6 +18,8 @@
 int main(int argc, char *argv[]) {
     using namespace std;
 
+    char *filepath = "C:\\Projects\\Playlister\\tests";
+    BuildPlaylist(filepath);
 
     return 0;
 }
