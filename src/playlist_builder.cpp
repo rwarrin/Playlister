@@ -11,6 +11,7 @@
 #include "../include/playlist_builder.h"
 
 #include <windows.h>
+#include <fstream>
 
 int BuildPlaylist(char *filePath) {
     using namespace std;
@@ -19,8 +20,7 @@ int BuildPlaylist(char *filePath) {
     string directoryName = GetDirectoryName(path);
     vector<string> fileList = BuildFileList(path);
 
-    cout << "Path: " << path << endl;
-    cout << "Directory name: " << directoryName << endl;
+    WritePlaylist(path, directoryName, fileList);
 
     return 0;
 }
@@ -65,4 +65,22 @@ std::vector<std::string> BuildFileList(std::string filePath) {
     }
 
     return fileList;
+}
+
+void WritePlaylist(std::string filePath, std::string fileName, std::vector<std::string> &fileList) {
+    using namespace std;
+
+    // build a filename to use for the playlist
+    string playlist(filePath);
+    playlist += "\\";
+    playlist += fileName;
+    playlist += ".m3u";
+
+    ofstream fileOut(playlist.c_str());
+
+    vector<string>::const_iterator iter;
+    for(iter = fileList.begin(); iter != fileList.end(); iter++)
+        fileOut << *iter << endl;
+    
+    fileOut.close();
 }
