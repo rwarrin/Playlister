@@ -17,8 +17,8 @@
 int main(int argc, char *argv[]) {
     using namespace std;
 
-    char *filepath = "K:\\Music\\Korn - Korn";
-    BuildPlaylist(filepath);
+    for(int i = 1; i < argc; i++)
+        BuildPlaylist(argv[i]);
 
     return 0;
 }

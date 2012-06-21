@@ -59,7 +59,6 @@ std::vector<std::string> BuildFileList(std::string filePath) {
     // iterate through all files in the directory
     int result = 1;
     while(result != 0) {
-        cout << findData.cFileName << endl;
         fileList.push_back(string(findData.cFileName));
         result = FindNextFile(handle, &findData);
     }
